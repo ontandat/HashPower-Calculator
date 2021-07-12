@@ -1,0 +1,121 @@
+﻿<html>
+<head>
+<style>
+.fbox input{width:100%;background: #2b2b2b;font-size: 18px;height:40px;border: 0px;border-radius: 0px;margin-bottom: 20px;padding: 0 20px;color: #fff;}
+.fbox input:focus{outline: none;background:#212121;box-shadow: inset 0 0 10px #000000;}
+.fbox {background: #464646;padding: 30px;box-shadow: 0 10px 6px -6px #777;}
+.tiline{text-align: center;
+    padding: 3px 20px;
+    background: #ec731b;
+    box-shadow: 4px -4px 4px #000;
+    color: #272727;
+	font-family: roboto;
+    font-weight: 700;}
+</style>
+</head>
+<body>
+
+<form name="converter">
+<div class="fbox">
+<span class="tiline"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Băm:</font></font></span>
+<input name="hash" onchange="hashConverter()" oninput="hashConverter()" placeholder="H / s" type="number" />
+
+<span class="tiline"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">KiloHash:</font></font></span>
+<input name="khash" onchange="khashConverter()" oninput="khashConverter()" placeholder="kH / s" type="number" />
+
+<span class="tiline"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MegaHash:</font></font></span>
+<input name="mhash" onchange="mhashConverter()" oninput="mhashConverter()" placeholder="MH / s" type="number" />
+
+<span class="tiline"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GigaHash:</font></font></span>
+<input name="ghash" onchange="ghashConverter()" oninput="ghashConverter()" placeholder="GH / s" type="number" />
+
+<span class="tiline"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TeraHash:</font></font></span>
+<input name="thash" onchange="thashConverter()" oninput="thashConverter()" placeholder="TH / s" type="number" />
+
+<span class="tiline"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PetaHash:</font></font></span>
+<input name="phash" onchange="phashConverter()" oninput="phashConverter()" placeholder="PH / s" type="number" />
+
+<span class="tiline"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ExaHash:</font></font></span>
+<input name="ehash" onchange="ehashConverter()" oninput="ehashConverter()" placeholder="EH / s" type="number" />
+
+<span class="tiline"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ZettaHash:</font></font></span>
+<input name="zhash" onchange="zhashConverter()" oninput="zhashConverter()" placeholder="ZH / s" type="number" />
+</div>
+</form>
+<script type="text/javascript">
+function hashConverter(){
+document.converter.khash.value = document.converter.hash.value / 1000
+document.converter.mhash.value = document.converter.hash.value / 1000000
+document.converter.ghash.value = document.converter.hash.value / 1000000000
+document.converter.thash.value = document.converter.hash.value / 1000000000000
+document.converter.phash.value = document.converter.hash.value / 1000000000000000
+document.converter.ehash.value = document.converter.hash.value / 1000000000000000000
+document.converter.zhash.value = document.converter.hash.value / 1000000000000000000000
+}
+function khashConverter(){
+document.converter.hash.value = document.converter.khash.value * 1000
+document.converter.mhash.value = document.converter.khash.value / 1000
+document.converter.ghash.value = document.converter.khash.value / 1000000
+document.converter.thash.value = document.converter.khash.value / 1000000000
+document.converter.phash.value = document.converter.khash.value / 1000000000000
+document.converter.ehash.value = document.converter.khash.value / 1000000000000000
+document.converter.zhash.value = document.converter.khash.value / 1000000000000000000
+}
+function mhashConverter(){
+document.converter.hash.value = document.converter.mhash.value * 1000000
+document.converter.khash.value = document.converter.mhash.value * 1000
+document.converter.ghash.value = document.converter.mhash.value / 1000
+document.converter.thash.value = document.converter.mhash.value / 1000000
+document.converter.phash.value = document.converter.mhash.value / 1000000000
+document.converter.ehash.value = document.converter.mhash.value / 1000000000000
+document.converter.zhash.value = document.converter.mhash.value / 1000000000000000
+}
+function ghashConverter(){
+document.converter.hash.value = document.converter.ghash.value * 1000000000
+document.converter.khash.value = document.converter.ghash.value * 1000000
+document.converter.mhash.value = document.converter.ghash.value * 1000
+document.converter.thash.value = document.converter.ghash.value / 1000
+document.converter.phash.value = document.converter.ghash.value / 1000000
+document.converter.ehash.value = document.converter.ghash.value / 1000000000
+document.converter.zhash.value = document.converter.ghash.value / 1000000000000
+}
+function thashConverter(){
+document.converter.hash.value = document.converter.thash.value * 1000000000000
+document.converter.khash.value = document.converter.thash.value * 1000000000
+document.converter.mhash.value = document.converter.thash.value * 1000000
+document.converter.ghash.value = document.converter.thash.value * 1000
+document.converter.phash.value = document.converter.thash.value / 1000
+document.converter.ehash.value = document.converter.thash.value / 1000000
+document.converter.zhash.value = document.converter.thash.value / 1000000000
+}
+function phashConverter(){
+document.converter.hash.value = document.converter.phash.value * 1000000000000000
+document.converter.khash.value = document.converter.phash.value * 1000000000000
+document.converter.mhash.value = document.converter.phash.value * 1000000000
+document.converter.ghash.value = document.converter.phash.value * 1000000
+document.converter.thash.value = document.converter.phash.value * 1000
+document.converter.ehash.value = document.converter.phash.value / 1000
+document.converter.zhash.value = document.converter.phash.value / 1000000
+}
+function ehashConverter(){
+document.converter.hash.value = document.converter.ehash.value * 1000000000000000000
+document.converter.khash.value = document.converter.ehash.value * 1000000000000000
+document.converter.mhash.value = document.converter.ehash.value * 1000000000000
+document.converter.ghash.value = document.converter.ehash.value * 1000000000
+document.converter.thash.value = document.converter.ehash.value * 1000000
+document.converter.phash.value = document.converter.ehash.value * 1000
+document.converter.zhash.value = document.converter.ehash.value / 1000
+}
+function zhashConverter(){
+document.converter.hash.value = document.converter.zhash.value * 1000000000000000000000
+document.converter.khash.value = document.converter.zhash.value * 1000000000000000000
+document.converter.mhash.value = document.converter.zhash.value * 1000000000000000
+document.converter.ghash.value = document.converter.zhash.value * 1000000000000
+document.converter.thash.value = document.converter.zhash.value * 1000000000
+document.converter.phash.value = document.converter.zhash.value * 1000000
+document.converter.ehash.value = document.converter.zhash.value * 1000
+}
+</script>
+</body>
+
+</html>
